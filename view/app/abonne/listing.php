@@ -11,6 +11,8 @@
     </div>
     <ul>
       <li><a href="<?= $view->path('abonne',  [$abonne->id]); ?>">Show</a></li>
+      <li><a href="<?= $view->path('editAbo',  [$abonne->id]); ?>">Edit</a></li>
+      <li><a onclick="return confirm('Etes vous sur et certain de vouloir supprimer cet abonné ?')"href="<?= $view->path('delAbo',  [$abonne->id]); ?>">Delete</a></li>
     </ul>
   <?php } ?>
 </section>
