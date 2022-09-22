@@ -37,7 +37,6 @@ class AbonnesController extends Controller
 
   public function add()
   {
-    var_dump($_POST);
     $errors = [];
     if (!empty($_POST['submitted'])) {
       $post = $this->cleanXss($_POST);
