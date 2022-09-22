@@ -16,4 +16,22 @@ class AbonnesController extends Controller
       'count' => $count
     ]);
   }
+
+  public function  show($id)
+  {
+    $abonne = $this->isAbonneExist($id);
+    $this->render(
+      'app.abonne.show',
+      ['abonne' => $abonne]
+    );
+  }
+
+  private function isAbonneExist($id)
+  {
+    $abonne = AbonneModel::findById($id);
+    if (empty($abonne)) {
+      $this->Abort404();
+    }
+    return $abonne;
+  }
 }
